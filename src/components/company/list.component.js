@@ -21,6 +21,7 @@ export default function List() {
                 },}
            );
            const data = await response.json();
+           //console.log(data);
            setCompany(data.data);
         };
         fetchCompany();
@@ -97,8 +98,8 @@ export default function List() {
                                                 <td>{row.name}</td>
                                                 <td>{row.email}</td>
                                                 <td>{row.telephone}</td>
-                                                <td><img src='logo/{row.logo}'/></td>
-                                                <td><img src='covers/{row.cover_images}'/></td>
+                                                <td><img src='logo/${row.logo}' /></td>
+                                                <td><img src="covers/${row.cover_images}"/></td>
                                                 <td>{row.website}</td>
                                                 <td>
                                                     <Link to={`/company/edit/${row.id}`} className='btn btn-success me-2'>

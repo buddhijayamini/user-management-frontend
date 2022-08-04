@@ -10,6 +10,9 @@ import { BrowserRouter as Router , Routes, Route, Link } from "react-router-dom"
 import EditCompany from "./components/company/edit.component";
 import CompanyList from "./components/company/list.component";
 import CreateCompany from "./components/company/create.component";
+import EditEmployee from "./components/employee/edit.component";
+import EmployeeList from "./components/employee/list.component";
+import CreateEmployee from "./components/employee/create.component";
 import Login from "./components/login";
 
 function App() {
@@ -26,10 +29,13 @@ function App() {
       <Row>
         <Col md={12}>
           <Routes>
+            <Route exact path='/' element={<Login />} />
             <Route path="/company/create" element={<CreateCompany />} />
             <Route path="/company/edit/:id" element={<EditCompany />} />
             <Route exact path='/company' element={<CompanyList />} />
-            <Route exact path='/' element={<Login />} />
+            <Route path="/employee/create" element={<CreateEmployee />} />
+            <Route path="/employee/edit/:id" element={<EditEmployee />} />
+            <Route exact path='/employee' element={<EmployeeList />} />    
           </Routes>
         </Col>
       </Row>
